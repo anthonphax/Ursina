@@ -112,7 +112,7 @@ class Ray(Entity):
 class Enemy(Entity):
     def __init__(self, start_pos, direction):
         super().__init__(
-            model='assets/Models/saucer/13884_UFO_Saucer_v1_l2.obj',
+            model='sphere',
             scale=0.0005,
             position=start_pos,
             collider='box'
@@ -190,13 +190,12 @@ def update():
             print(hit_info.entity)
             score += 10
 
-    print(score)
+    # print(score)
 
 
 
 Sky()
 camera.orthographic = True
 camera.fov = 4
-from ursina.shaders import ssao_shader
-camera.shader = ssao_shader
+
 app.run()
